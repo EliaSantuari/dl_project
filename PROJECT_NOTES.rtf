@@ -1,0 +1,72 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fswiss\fcharset0 Arial-BoldMT;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14380\viewh9920\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \
+COMPOSITIONALITY: \
+As humans we are able to understand difficult things like: \'93a purple elephant fixing a refrigerator\'94, for us it is obvious.\
+This is composition understanding. \
+The meaning of a complex expression is given by the meanings of its single components and how they are related. Compositional understanding is the ability to exploit compisitionality. \
+We use this mechanism in 
+\f1\b language 
+\f0\b0 and 
+\f1\b visual \
+
+\f0\b0 Compositional understanding: \
+- efficiency a finite set of primitives and rules gives an exponential number of combinations. \
+- generalisation: we can understand new images\
+\
+* property variations: different variations of the same object\
+* attribute-object binding: associate an attribute to its corresponding object\
+* \
+\'85\
+\
+CLIP: image encoder and a text encoder, takes an image in input and a vector in output and similar with a text that gives a vector living in the same dimension of the image output. The cosine similarity measures semantic similarity. The two vectors are called clip embeddings. \
+We\'92ll see whether:\
+* CLIP is not compositional\
+* CLIP is compositional\
+Let\'92s consider a simpler object (object variations), like a list of attributes (red, blue etc.), we compute the embeddings of this (???)\'85\
+\
+We do not expect to be perfect compositional and decomposable, we search the decomposable set that best approximates them\'85\
+\
+CLIP is compositional for certain type of compositional but for some other compositional is not. It may for example embed order informations. \
+\
+DON\'92T BE SCARED!\
+FIRST TASK IS TO READ SOME PAPERS ON COMPOSITIONALITY: there will be less code to write and more to study. \
+\
+
+\f1\b PROJECT ASSIGNMENT:\
+
+\f0\b0 \
+-background: CLAY - recent paper still to be published, foundation we decided to use for the project. About compositioality in the retrival boh.\
+RETRIEVAL: I index a database, I look for matched entries, in our case we will have set of images and embedding instead of indeces. We\'92ll have a tensor with dim (num_samples, emb_dim) and the task will be to compute the cosine similarity (matched entries). \
+The problem is that if I change embedding model I will have to recompute the embeddings for the whole images. We will try to instead of changing the entire model, we tweak the query encoder. \
+CLAY tries to condition this similarity between two vectors by modulating the original similarity. \
+To keep the database intact we need an asymmetric modulation. \
+\
+-datasets: well use CELEB-A, 40 binary attributes for each image\
+\
+-task: CLAY has a pre-SVD embedding stacking as a fusion mechanism. WE SHOULD DEVELOP A NEW METHODOLOGICAL APPROACH. We can do whatever we want!\
+	* Training-free approaches: prompt engineering, zero shot attention scaling\
+	* Training-based approaches: lightweight adapters, cross-attention networks, interpretability-based\
+We want to overcome the SVD bottleneck and express multimodal conditioning, like accepting one or multiple conditions as input for a single image. \
+\
+They do not care about the final performance but they want to see the work we have done. \
+\
+-roadmap:\
+ 	* Data exploration and preprocessing\
+	* Offline feature extraction\
+	* Vanilla zero-shot baseline\
+	* Method development\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+}
