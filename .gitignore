@@ -4,3 +4,4 @@ dl_venv/
 Miniconda3-latest-Linux-x86_64.sh
 personal_img/
 celeba_image_embeddings_train.pt
+retrieval_comparison
